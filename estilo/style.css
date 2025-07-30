@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+
+:root{
+    --fonte-titulo: 'cormorant garamond', serif;
+    --fonte-texto: 'cactus classical serif', serif;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+header{
+    background: #000;
+    height: 20vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+header img{
+    width: 20%;
+    height: 80%;
+    margin-left: 20px;
+}
+
+.menu-toggle {
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+  margin-left: auto;
+  margin-right: 20px;
+  
+}
+
+.menu {
+  display: none;
+  background: #444;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  border-top: 1px solid #555;
+}
+
+.menu li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+.menu li a:hover {
+  background: #555;
+}
+
+.capa{
+    background: url(../imagens/fundo-01.jpg) no-repeat center;
+    background-size: cover;
+    height: 280px;
+    
+    
+}
+
+.capa h1{
+    color: white;
+    font-family: var(--fonte-titulo);
+    text-align: center;
+    font-size: 1.6em;
+    padding-top: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.capa h3{
+    color: white;
+    font-family: var(--fonte-texto);
+    text-align: center;
+    font-size: 1em;
+    padding-top: 15px;
+    font-weight: normal;
+}
+
+.botoes{
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    gap: 25px;
+}
+
+.capa > .botoes > #ver{
+    height: 40px;
+    width: 130px;
+    background: #c2824b;
+    color: white;
+    font-family: var(--fonte-texto);
+    border: white 1px solid;
+}
+
+.capa > .botoes > #pedir{
+    height: 40px;
+    width: 130px;
+    background: #00000000;
+    color: #fff;
+    border: #fff 1px solid;
+    font-family: var(--fonte-texto);
+}
+
+.sobre{
+    height: 550px;
+    
+}
+
+.sobre > .title-sobre{
+    color: #000;
+    text-align: center;
+    font-family: var(--fonte-titulo);
+    font-size: 1.7em;
+    padding-top: 100px;
+    
+}
+
+.sobre > .text-sobre{
+    font-family: var(--fonte-texto);
+    text-align: justify;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 50px;
+}

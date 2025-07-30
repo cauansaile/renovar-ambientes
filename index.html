@@ -3,29 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo/style.css">
     <title>Renovar - Ambientes planejados</title>
+    
 </head>
 <body>
     <header>
-        <nav>
-            <img src="imagens/Logo .jpg" alt="Logo">
-            <a href="#">Quem Somos</a>
-            <a href="#">Processo</a>
-            <a href="#">Blog</a>
-            <a href="#">Contato</a>
-        </nav>
+        
+            <img src="imagens/logo-renovar.png" alt="Logo">
+            <div class="menu-toggle" id="menu-toggle">
+                ☰
+            </div>
+            <nav class="menu" id="menu">
+                <ul>
+                    <li><a href="#">Quem Somos</a></li>
+                    <li><a href="#">Processo</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+        
     </header>
     <main>
         <div class="capa">
-            <h1>Cada projeto carrega uma história <br> A sua.</h1>
+            <h1>Cada projeto carrega uma história. <br> A sua.</h1>
             <h3>Transformamos ideias em ambientes que acolhem, inspiram e refletem quem você é.</h3>
-            <button>Ver galeria</button>
-            <button>Pedir um orçamento</button>
+            <div class="botoes">
+                <button id="ver">Ver galeria</button>
+                <button id="pedir">Pedir um orçamento</button>
+            </div>
 
         </div>
         <section class="sobre">
-            <h2>Nossa história</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit voluptas, adipisci aperiam consequuntur corporis labore non, maxime aliquid nemo assumenda explicabo, esse nostrum odit dolor repellat. Ullam adipisci ea aliquid.</p>
+            <div class="title-sobre">
+                <h2>Nossa história</h2>
+            </div>
+            <div class="text-sobre">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit voluptas, adipisci aperiam consequuntur corporis labore non, maxime aliquid nemo assumenda explicabo, esse nostrum odit dolor repellat. Ullam adipisci ea aliquid. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias rem voluptates tenetur aliquam facilis saepe quas quibusdam laborum, quod expedita non sapiente laboriosam. Fuga hic harum, vel laudantium omnis repudiandae!</p>
+            </div>
         </section>
         <section class="processo">
             <h2>Processo da criação do seu sonho</h2>
@@ -36,7 +51,7 @@
         </section>
         <section class="galeria">
             <h2>Galeria</h2>
-            <img src="imagens/IMG_0038.JPG" alt="imagem 01">
+            <!--<img src="imagens/IMG_0038.JPG" alt="imagem 01">-->
         </section>
         <section class="diferenciais">
             <h2>Diferenciais Renovar</h2>
