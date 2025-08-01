@@ -209,3 +209,152 @@ header img{
     font-size: 2em;
     
 }
+
+.diferenciais{
+
+    height: 500px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.diferenciais h2{
+    font-family: var(--fonte-titulo);
+    font-size: 2em;
+    padding-top: 60px;
+
+}
+
+.itens-dif{
+    background: #dcdcdc;
+    margin-top: 40px;
+    width: 85%;
+    height: 60%;
+
+}
+
+.itens-dif h3{
+    text-align: center;
+    font-family: var(--fonte-titulo);
+    padding-top: 25px;
+    padding-bottom:25px ;
+    font-size: 1.6em;
+}
+
+.itens-dif p {
+    font-family: var(--fonte-texto);
+    text-align: justify;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.contato{
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form{
+    background: #000;
+    width: 90%;
+    height: 90%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.contact-form h2{
+    text-align: center;
+    font-family: var(--fonte-titulo);
+    font-size: 2em;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.orçamento{
+
+    background: #fff;
+    width: 90%;
+    height: 80%;
+}
+
+/*.form{
+    background: var(--cor01);
+    width: 99vw;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}*/
+
+.form-item{
+    width: 95%;
+    color: #000;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+
+}
+
+.form-item label{
+    display: block;   
+    padding: 5px; 
+    font-size: 1.2em;
+    font-family: var(--fonte-titulo);
+  
+}
+
+/*.form-item{
+    background: white;
+    width: 30vw;
+    margin: 15px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 15px;
+}
+
+.form-item label {
+    display: block;
+    font-weight: bold;
+    margin-top: 25px;
+    font-size: 1.2em;
+    color: #011526;
+}*/
+
+.form-item > .botao button{
+  margin-top: 40px;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-item button:hover{
+    background: #c2824b;
+}
+
+.form-item input,
+.form-item select,
+.form-item textarea{
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-left: 10px ;
+  border: 1px, solid, rgba(0, 0, 0, 0.433);
+}
+
+.botao {
+    align-self: center;
+    width: 33%;
+
+}
