@@ -28,10 +28,10 @@
         <div class="capa">
             <h1>Cada projeto carrega uma história. <br> A sua.</h1>
             <h3>Transformamos ideias em ambientes que acolhem, inspiram e refletem quem você é.</h3>
-            <div class="botoes">
+           <!-- <div class="botoes">
                 <button id="ver">Ver galeria</button>
                 <button id="pedir">Pedir um orçamento</button>
-            </div>
+            </div>-->
 
         </div>
         <section class="sobre">
@@ -58,16 +58,40 @@
         </section>
         <section class="diferenciais">
             <h2>Diferenciais Renovar</h2>
-            <div class="itens-dif">
-                <h3>Acabamento Premium</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi perspiciatis id laboriosam non eveniet officia tempora nobis aspernatur et maxime, adipisci deleniti beatae tenetur quo facere, doloribus aut laborum. Quibusdam.</p>
+            <div class="dif">
+                <div class="carrossel-container" id="carrossel-container">
+                    <div class="carrossel" id="carrossel">
+                        <div class="itens-dif">
+                            <h3>Acabamento Premium</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi perspiciatis id laboriosam non eveniet officia tempora nobis aspernatur et maxime, adipisci deleniti beatae tenetur quo facere, doloribus aut laborum. Quibusdam.</p>
+                        </div>
+                        <div class="itens-dif">
+                            <h3>Design Sob Medida e Assinatura</h3>
+                            <p>Projetos com identidade. Cada ambiente é pensado em parceria com o cliente, integrando funcionalidade e estética de forma única. Nosso design autoral valoriza a arquitetura e eleva a experiência de morar com estilo.</p>
+                        </div>
+                        <div class="itens-dif">
+                            <h3>Ferragens de Alta Performance</h3>
+                            <p>Tecnologia e conforto no uso diário. Utilizamos ferragens alemãs ou italianas com sistemas de amortecimento, abertura assistida, push-open e organizadores internos. Funcionamento suave, silencioso e duradouro.</p>
+                        </div>
+                        <div class="itens-dif">
+                            <h3>Iluminação Embutida e Inteligente</h3>
+                            <p>Ambientes com atmosfera. Projetos com iluminação LED embutida em nichos, armários e prateleiras, criando efeitos sofisticados e funcionais. Opções com sensores e integração à automação residencial.</p>
+                        </div>
+                        <div class="itens-dif">
+                            <h3>Marcenaria Sustentável</h3>
+                            <p>Elegância com responsabilidade. Usamos apenas painéis com certificação FSC e fornecedores comprometidos com práticas ecológicas. Nossos resíduos são destinados corretamente, priorizando o respeito ao meio ambiente.</p>
+                        </div>
             </div>
-            
+                        
+                </div>
+            </div>
+            <button onclick="anterior()" class="button-carrossel">&#10094;</button>
+            <button onclick="proximo()" class="button-carrossel">&#10095;</button>
         </section>
         <section class="contato">
             <div class="contact-form">
                 <h2>Peça um orçamento</h2>
-                <div class="orçamento">
+                
                     <form id="formContato" class="form-item">
                         <label for="nome">Seu nome:</label>
                         <input type="text" id="nome" required>
@@ -77,10 +101,10 @@
                         <input type="email" id="email" required>
                         <label for="endereco">Endereço:</label>
                         <input type="text" id="endereco" required>
-                        <label for="servico">Descreva o serrviço desejado:</label>
+                        <label for="servico">Descreva o serviço desejado:</label>
                         <textarea name="servico" id="servico"></textarea>
                         <div class="botao"><button type="submit">Enviar</button></div>
-                </div>
+                
             </div>
         </section>
     </main>
@@ -103,5 +127,7 @@
 
 
     </footer>
+
+    <script src="/js/scrip.js"></script>
 </body>
 </html>
