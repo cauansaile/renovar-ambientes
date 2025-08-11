@@ -1,4 +1,11 @@
 
+const toggle = document.getElementById('menu-toggle');
+const menu = document.getElementById('menu');
+
+toggle.addEventListener('click', () => {
+    menu.classList.toggle('ativo');
+});
+
 let index = 0;
 const carrossel = document.getElementById('carrossel');
 const total = carrossel.children.length;
@@ -8,7 +15,7 @@ function atualizarCarrossel() {
     carrossel.style.transform = `translateX(${-index * 100}%)`;
 }
 
-function proximo() {
+/*function proximo() {
     index = (index + 1) % total;
     atualizarCarrossel();
 }
@@ -16,6 +23,18 @@ function proximo() {
 function anterior() {
     index = (index - 1 + total) % total;
     atualizarCarrossel();
+}*/
+function proximo() {
+    index = (index + 1) % total;
+    atualizarCarrossel();
+    pararAutoPlay();
+    iniciarAutoPlay();
+}
+function anterior() {
+    index = (index - 1 + total) % total;
+    atualizarCarrossel();
+    pararAutoPlay();
+    iniciarAutoPlay();
 }
 
 function iniciarAutoPlay() {
