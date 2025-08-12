@@ -321,7 +321,7 @@ header img{
     background-color: white;
 }
 
-.carrossel {
+.carrossel-dif {
     display: flex;
     transition: transform 0.5s ease-in-out;
 }

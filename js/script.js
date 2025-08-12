@@ -7,12 +7,20 @@ toggle.addEventListener('click', () => {
 });
 
 let index = 0;
-const carrossel = document.getElementById('carrossel');
+const carrossel = document.getElementById('carrossel-dif');
 const total = carrossel.children.length;
 let intervalo;
 
 function atualizarCarrossel() {
     carrossel.style.transform = `translateX(${-index * 100}%)`;
+}
+
+const carrosselGaleria = document.getElementById('carrossel-galeria');
+const totalGaleria = carrosselGaleria.children.length;
+let intervaloGaleria;
+
+function atualizarCarrossel() {
+    carrosselGaleria.style.transform = `translateX(${-index * 100}%)`;
 }
 
 /*function proximo() {
@@ -24,6 +32,9 @@ function anterior() {
     index = (index - 1 + total) % total;
     atualizarCarrossel();
 }*/
+
+
+
 function proximo() {
     index = (index + 1) % total;
     atualizarCarrossel();
@@ -37,6 +48,7 @@ function anterior() {
     iniciarAutoPlay();
 }
 
+
 function iniciarAutoPlay() {
     intervalo = setInterval(proximo, 5000); // 5 segundos
 }
@@ -44,6 +56,7 @@ function iniciarAutoPlay() {
 function pararAutoPlay() {
     clearInterval(intervalo);
 }
+
 
 // Iniciar autoplay
 iniciarAutoPlay();
