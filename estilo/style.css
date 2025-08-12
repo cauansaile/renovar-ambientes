@@ -216,11 +216,13 @@ header img{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
 
 .galeria img{
     height: 80%;
-    margin-top: 25px;
+    /*margin-top: 25px;*/
 }
 
 .galeria h2{
@@ -228,6 +230,32 @@ header img{
     padding-top: 40px;
     text-align: center;
     font-size: 2em;
+    
+}
+
+.itens-galeria{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 100%;
+    width: 85%;
+    height: 100vh;
+    
+
+}
+
+.fotos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 85%;
+    height: 100%;
+    
+}
+
+.fotos > .carrossel-container {
+    border: none;
+    border-radius: 0px;
     
 }
 

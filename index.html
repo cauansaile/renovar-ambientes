@@ -16,10 +16,10 @@
             </div>
             <nav class="menu" id="menu">
                 <ul>
-                    <li><a href="#">Quem Somos</a></li>
-                    <li><a href="#">Processo</a></li>
+                    <li><a href="#sobre">Quem Somos</a></li>
+                    <li><a href="#processo">Processo</a></li>
                     <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contato</a></li>
+                    <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
         
@@ -34,7 +34,7 @@
             </div>-->
 
         </div>
-        <section class="sobre">
+        <section class="sobre" id="sobre">
             <div class="title-sobre">
                 <h2>Nossa história</h2>
             </div>
@@ -42,7 +42,7 @@
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit voluptas, adipisci aperiam consequuntur corporis labore non, maxime aliquid nemo assumenda explicabo, esse nostrum odit dolor repellat. Ullam adipisci ea aliquid. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias rem voluptates tenetur aliquam facilis saepe quas quibusdam laborum, quod expedita non sapiente laboriosam. Fuga hic harum, vel laudantium omnis repudiandae!</p>
             </div>
         </section>
-        <section class="processo">
+        <section class="processo" id="processo">
             <div class="title-process">
                 <h2>Processo da criação do seu sonho</h2>
             </div>
@@ -54,7 +54,20 @@
         </section>
         <section class="galeria">
             <h2>Galeria</h2>
-            <img src="imagens/imagem-01.png" alt="imagem 01">
+            <div class="fotos">
+                <div class="carrossel-container" id="carrossel-container">
+                    <div class="carrossel" id="carrossel">
+                        <div class="itens-galeria"><img src="imagens/imagem-01.png" alt="imagem 01"></div>
+                        <div class="itens-galeria"><img src="imagens/imagem-02.JPG" alt="imagem 02"></div>
+                        <div class="itens-galeria"><img src="imagens/imagem-03.png" alt="imagem 03"></div>
+                        <div class="itens-galeria"><img src="imagens/imagem-04.png" alt="imagem 04"></div>
+                        <div class="itens-galeria"><img src="imagens/imagem-05.png" alt="imagem 05"></div>
+                    </div>
+                    <button onclick="anterior()" class="button-carrossel">&#10094;</button>
+                    <button onclick="proximo()" class="button-carrossel">&#10095;</button>
+                </div>
+            </div>
+
         </section>
         <section class="diferenciais">
             <h2>Diferenciais Renovar</h2>
@@ -88,7 +101,7 @@
             </div>
             
         </section>
-        <section class="contato">
+        <section class="contato" id="contato">
             <div class="contact-form">
                 <h2>Peça um orçamento</h2>
                 
