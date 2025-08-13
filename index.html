@@ -52,10 +52,10 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ratione placeat minus explicabo corrupti assumenda tenetur perferendis at quas, culpa in quasi ad error. Ducimus soluta tenetur veniam voluptates dolor.</p>
             </div>
         </section>
-        <section class="galeria">
+        <!--<section class="galeria">
             <h2>Galeria</h2>
             <div class="fotos">
-                <div class="carrossel-container" id="carrossel-container">
+                <div class="carrossel-container" id="carrossel-container-galeria">
                     <div class="carrossel-galeria" id="carrossel-galeria">
                         <div class="itens-galeria"><img src="imagens/imagem-01.png" alt="imagem 01"></div>
                         <div class="itens-galeria"><img src="imagens/imagem-02.JPG" alt="imagem 02"></div>
@@ -63,16 +63,39 @@
                         <div class="itens-galeria"><img src="imagens/imagem-04.png" alt="imagem 04"></div>
                         <div class="itens-galeria"><img src="imagens/imagem-05.png" alt="imagem 05"></div>
                     </div>
-                    <button onclick="anterior()" class="button-carrossel">&#10094;</button>
-                    <button onclick="proximo()" class="button-carrossel">&#10095;</button>
+                    <button onclick="anteriorGal()" class="button-carrossel">&#10094;</button>
+                    <button onclick="proximoGal()" class="button-carrossel">&#10095;</button>
                 </div>
             </div>
 
+        </section>-->
+
+        <section class="galeria">
+            <h2>Galeria</h2>
+            <div class="carousel-galeria">
+                <button class="carousel-button prev-gal">&#10094;</button>
+                <button class="carousel-button next-gal">&#10095;</button>
+                <div class="carousel-track-gal">
+                    <img src="imagens/imagem-01.png" alt="Foto 1">
+                    <img src="imagens/imagem-03.PNG" alt="Foto 2">
+                    <img src="imagens/imagem-04.PNG" alt="Foto 3">
+                    <img src="imagens/imagem-05.PNG" alt="Foto 4">
+                    <img src="imagens/IMG_7095.PNG" alt="Foto 5">
+                </div>
+                <div class="carousel-nav-gal">
+                    <button class="active"></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                </div>
+            </div>
         </section>
+
         <section class="diferenciais">
             <h2>Diferenciais Renovar</h2>
             <div class="dif">
-                <div class="carrossel-container" id="carrossel-container">
+                <div class="carrossel-container" id="carrossel-container-dif">
                     <div class="carrossel-dif" id="carrossel-dif">
                         <div class="itens-dif">
                             <h3>Acabamento Premium</h3>
@@ -95,8 +118,8 @@
                             <p>Elegância com responsabilidade. Usamos apenas painéis com certificação FSC e fornecedores comprometidos com práticas ecológicas. Nossos resíduos são destinados corretamente, priorizando o respeito ao meio ambiente.</p>
                         </div>
             </div>
-                        <button onclick="anterior()" class="button-carrossel">&#10094;</button>
-                        <button onclick="proximo()" class="button-carrossel">&#10095;</button>
+                        <button onclick="anteriorDif()" class="button-carrossel">&#10094;</button>
+                        <button onclick="proximoDif()" class="button-carrossel">&#10095;</button>
                 </div>
             </div>
             
