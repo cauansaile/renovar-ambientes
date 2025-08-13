@@ -14,7 +14,7 @@ const navButtons = document.querySelectorAll('.carousel-nav-gal button');
 const prevButton = document.querySelector('.carousel-button.prev-gal');
 const nextButton = document.querySelector('.carousel-button.next-gal');
 let currentIndex = 0;
-const intervalTime = 4000;
+const intervalTime = 3500;
 let slideInterval;
 
 function updateSlideWidth() {
