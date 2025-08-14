@@ -227,7 +227,7 @@ header img{
     padding-top: 40px;
     text-align: center;
     font-size: 2em;
-    padding-bottom: 20px;
+    padding-bottom: 20pxss;
     
 }
 
@@ -504,4 +504,118 @@ header img{
     align-self: center;
     width: 33%;
 
+}
+
+
+@media screen and (min-width: 769px) {
+
+  .capa{
+    height: 450px;
+  }
+
+
+
+
+  header {
+    height: 12vh;
+    padding: 0 40px;
+  }
+
+  header img {
+    width: 150px;
+    height: auto;
+    margin-left: 0;
+  }
+
+  /* Esconde o botão hambúrguer */
+  .menu-toggle {
+    display: none;
+  }
+
+  /* Mostra o menu sempre visível */
+  .menu {
+    display: block;
+    position: static;
+    max-height: none;
+    background: transparent;
+    width: auto;
+    transition: none;
+
+  }
+
+  .menu ul {
+    display: flex;
+    gap: 20px;
+  }
+
+  .menu li {
+    border: none;
+  }
+
+  .menu li a {
+    padding: 0;
+    color: white;
+    font-size: 1rem;
+  }
+
+  .menu li a:hover {
+    background: none;
+    color: #ddd;
+  }
+
+
+
+.sobre{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 70px;
+    padding-right: 70px;
+    
+}
+
+.sobre > .text-sobre{
+    width: 40%;
+    padding: top 0; ;
+    padding-right: 50px;
+
+}
+
+.sobre > .title-sobre{
+    padding-top: 0;
+    padding-left: 50px;
+    
+}
+
+
+.processo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+.passos{
+    width: 60%;
+    padding-bottom: 0;
+    padding-top: 50px;
+    
+}
+
+.itens-dif{
+    flex-direction: column;
+    justify-content: center;
+    height: 60vh;
+    margin-top: -40px;
+}
+.carrossel-container{
+    width: 50vw;
+    
+}
+
+.contact-form{
+    width: 60vw;
+}
+    
 }

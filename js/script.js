@@ -124,4 +124,20 @@ containerDif.addEventListener('mouseleave', iniciarAutoPlayDif);
 
 iniciarAutoPlayDif();
 
+document.getElementById("formContato").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const nome = document.getElementById("nome").value;
+  const endereco = document.getElementById("endereco").value;
+  const servico = document.getElementById("servico").value;
+  
+
+  const texto = `Olá! Me chamo ${nome}, Gostaria de um orçamento.%0A🏫 Endereço: ${endereco}%0A📝 Serviço: ${servico || "N/A"}`;
+
+  const numero = "5571993201911"; // Altere para o número da escola com DDI + DDD
+  const url = `https://wa.me/${numero}?text=${texto}`;
+
+  window.open(url, "_blank");
+});
+
 
