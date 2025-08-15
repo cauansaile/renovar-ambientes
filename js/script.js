@@ -18,7 +18,7 @@ const intervalTime = 3500;
 let slideInterval;
 
 function updateSlideWidth() {
-  if(window.innerWidth >= 768) {
+  if(window.innerWidth >= 769) {
     return 3; // mostra 3 fotos
   } else {
     return 1; // mostra 1 foto

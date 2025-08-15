@@ -511,8 +511,15 @@ header img{
 
   .capa{
     height: 450px;
-  }
+    }
 
+    .capa h1{
+        font-size: 3.2em;
+    }
+
+    .capa > .text-capa h3{
+        font-size: 1.4em;
+    }
 
 
 
@@ -545,7 +552,7 @@ header img{
 
   .menu ul {
     display: flex;
-    gap: 20px;
+    gap: 50px;
   }
 
   .menu li {
@@ -608,6 +615,8 @@ header img{
     justify-content: center;
     height: 60vh;
     margin-top: -40px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 .carrossel-container{
     width: 50vw;
