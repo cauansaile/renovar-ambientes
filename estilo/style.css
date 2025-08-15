@@ -295,6 +295,12 @@ header img{
     background-color: white;
   }
 
+  .carousel-track-gal {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+  }
+
 .diferenciais{
 
     height: 600px;

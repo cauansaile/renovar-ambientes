@@ -21,7 +21,7 @@ function updateSlideWidth() {
   if(window.innerWidth >= 769) {
     return 3; // mostra 3 fotos
   } else {
-    return 1; // mostra 1 foto
+    return 1.1; // mostra 1 foto
   }
 }
 
