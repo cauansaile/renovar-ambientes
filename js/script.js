@@ -8,7 +8,7 @@ toggle.addEventListener('click', () => {
 });
 
 
-const track = document.querySelector('.carousel-track-gal');
+/*const track = document.querySelector('.carousel-track-gal');
 const slides = Array.from(track.children);
 const navButtons = document.querySelectorAll('.carousel-nav-gal button');
 const prevButton = document.querySelector('.carousel-button.prev-gal');
@@ -21,7 +21,7 @@ function updateSlideWidth() {
   if(window.innerWidth >= 769) {
     return 3; // mostra 3 fotos
   } else {
-    return 1.1; // mostra 1 foto
+    return 1; // mostra 1 foto
   }
 }
 
@@ -33,12 +33,16 @@ function goToSlide(index) {
 
   currentIndex = index;
   track.style.transform = `translateX(-${(100 / slidesToShow) * currentIndex}%)`;
+
   updateNav();
 }
 
 function updateNav() {
+  const slidesToShow = updateSlideWidth();
+  const page = Math.floor(currentIndex / slidesToShow); 
+  // 🔹 Ajustado: agora marca o botão da "página" (grupo de slides)
   navButtons.forEach((btn, i) => {
-    btn.classList.toggle('active', i === currentIndex);
+    btn.classList.toggle('active', i === page);
   });
 }
 
@@ -58,7 +62,8 @@ function resetInterval() {
 // Eventos
 navButtons.forEach((button, i) => {
   button.addEventListener('click', () => {
-    goToSlide(i);
+    goToSlide(i * updateSlideWidth()); 
+    // 🔹 Agora cada botão leva para a "página" correta
     resetInterval();
   });
 });
@@ -79,7 +84,168 @@ window.addEventListener('resize', () => {
 });
 
 // Inicia carrossel automático
+slideInterval = setInterval(nextSlide, intervalTime);*/
+
+
+// JS
+
+const track = document.querySelector('.carousel-track-gal');
+const slides = Array.from(track.children);
+const nav = document.querySelector('.carousel-nav-gal');
+const prevButton = document.querySelector('.carousel-button.prev-gal');
+const nextButton = document.querySelector('.carousel-button.next-gal');
+
+let currentIndex = 0;
+let slidesToShow = 1;
+let slideWidthPx = 0;
+let navButtons = [];
+const intervalTime = 3500;
+let slideInterval;
+const gap = 12;
+
+let startX = 0;
+let isDragging = false;
+let movedX = 0;
+
+/* 🔹 Clonar todos os slides para infinito */
+function cloneSlides() {
+  const allSlides = Array.from(track.children);
+
+  // clones antes
+  allSlides.forEach(slide => {
+    const clone = slide.cloneNode(true);
+    clone.classList.add('clone');
+    track.insertBefore(clone, track.firstChild);
+  });
+
+  // clones depois
+  allSlides.forEach(slide => {
+    const clone = slide.cloneNode(true);
+    clone.classList.add('clone');
+    track.appendChild(clone);
+  });
+}
+
+/* Calcula quantos slides mostrar */
+function getSlidesToShow() {
+  return window.innerWidth >= 769 ? 3 : 1;
+}
+
+/* Aplica tamanho dos slides */
+function applySizes(preservePage = true) {
+  slidesToShow = getSlidesToShow();
+  const allSlides = document.querySelectorAll('.carousel-track-gal img');
+  const viewportWidth = document.querySelector('.carousel-galeria').clientWidth;
+  const totalGap = gap * (slidesToShow - 1);
+  slideWidthPx = (viewportWidth - totalGap) / slidesToShow;
+
+  allSlides.forEach(img => {
+    img.style.flex = `0 0 ${slideWidthPx}px`;
+    img.style.maxWidth = `${slideWidthPx}px`;
+  });
+
+  buildDots();
+  goToSlide(currentIndex, false);
+}
+
+/* Cria dots dinamicamente */
+function buildDots() {
+  const originalSlides = slides.length;
+  const pages = Math.ceil(originalSlides / slidesToShow);
+  nav.innerHTML = '';
+  navButtons = [];
+
+  for (let i = 0; i < pages; i++) {
+    const btn = document.createElement('button');
+    if (i === Math.floor((currentIndex - slides.length) / slidesToShow)) btn.classList.add('active');
+    btn.addEventListener('click', () => {
+      goToSlide(i * slidesToShow + slides.length); // ajusta para começar no primeiro original
+      resetInterval();
+    });
+    nav.appendChild(btn);
+    navButtons.push(btn);
+  }
+}
+
+/* Move para slide */
+function goToSlide(index, animate = true) {
+  const allSlides = document.querySelectorAll('.carousel-track-gal img');
+  currentIndex = index;
+  const offset = (slideWidthPx + gap) * currentIndex;
+  track.style.transition = animate ? 'transform 0.5s ease-in-out' : 'none';
+  track.style.transform = `translateX(-${offset}px)`;
+  updateDots();
+}
+
+/* Atualiza dots */
+function updateDots() {
+  const page = Math.floor((currentIndex - slides.length) / slidesToShow);
+  navButtons.forEach((b, i) => b.classList.toggle('active', i === page));
+}
+
+/* Transição infinita: reposiciona quando chega nos clones */
+track.addEventListener('transitionend', () => {
+  const allSlides = document.querySelectorAll('.carousel-track-gal img');
+  const originalLength = slides.length;
+
+  if (currentIndex >= allSlides.length - originalLength) {
+    currentIndex = currentIndex - originalLength;
+    goToSlide(currentIndex, false);
+  }
+  if (currentIndex < originalLength) {
+    currentIndex = currentIndex + originalLength;
+    goToSlide(currentIndex, false);
+  }
+});
+
+/* Próximo e anterior */
+function nextSlide() { goToSlide(currentIndex + 1); }
+function prevSlide() { goToSlide(currentIndex - 1); }
+
+/* Swipe / arraste */
+function startDrag(e) {
+  isDragging = true;
+  startX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+  movedX = 0;
+  track.style.transition = 'none';
+}
+function moveDrag(e) {
+  if (!isDragging) return;
+  const x = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+  movedX = x - startX;
+  const offset = (slideWidthPx + gap) * currentIndex - movedX;
+  track.style.transform = `translateX(-${offset}px)`;
+}
+function endDrag() {
+  if (!isDragging) return;
+  isDragging = false;
+  if (movedX > 50) prevSlide();
+  else if (movedX < -50) nextSlide();
+  else goToSlide(currentIndex);
+}
+
+/* Eventos */
+nextButton.addEventListener('click', () => { nextSlide(); resetInterval(); });
+prevButton.addEventListener('click', () => { prevSlide(); resetInterval(); });
+window.addEventListener('resize', () => applySizes(true));
+track.addEventListener('mousedown', startDrag);
+track.addEventListener('mousemove', moveDrag);
+track.addEventListener('mouseup', endDrag);
+track.addEventListener('mouseleave', endDrag);
+track.addEventListener('touchstart', startDrag);
+track.addEventListener('touchmove', moveDrag);
+track.addEventListener('touchend', endDrag);
+
+/* Autoplay */
 slideInterval = setInterval(nextSlide, intervalTime);
+
+/* Inicializa */
+cloneSlides();
+currentIndex = slides.length; // começa no primeiro slide original
+applySizes(false);
+goToSlide(currentIndex, false);
+
+
 
 
 // ===================== CARROSSEL DIFERENCIAIS =====================

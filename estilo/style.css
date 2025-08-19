@@ -212,7 +212,7 @@ header img{
 }
 
 .galeria{
-    height: 600px;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -227,25 +227,34 @@ header img{
     padding-top: 40px;
     text-align: center;
     font-size: 2em;
-    padding-bottom: 20pxss;
+    padding-bottom: 20px;
     
 }
 
 
 
 .carousel-galeria {
+    height: 500px;
     position: relative;
-    width: 90%;
+    width: 100%;
     max-width: 900px;
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    margin: 0 auto;
+    user-select: none;
+    -webkit-user-drag: none;
+    -touch-action: pan-y;
+
+    
   }
 
   .carousel-track-gal {
     display: flex;
+    /*gap: 10px;*/
+    width: 100%;
     transition: transform 0.5s ease-in-out;
-    
+    will-change: transform;
+    gap: 12px;
+    height: 100%;
   }
 
   
@@ -255,7 +264,7 @@ header img{
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0);
     border: none;
-    color: white;
+    color: #c2834ba0;
     font-size: 30px;
     padding: 10px;
     cursor: pointer;
@@ -295,10 +304,18 @@ header img{
     background-color: white;
   }
 
-  .carousel-track-gal {
-    display: flex;
-    gap: 10px;
+ 
+  .carousel-track-gal img{
+    box-sizing: border-box;
     width: 100%;
+    height: auto;      /* mantém proporção original */
+    display: block; 
+    object-fit: cover;
+         /* barras pretas nas áreas vazias */
+    border-radius: 6px;
+    flex: 0 0 auto;
+    pointer-events: none;
+
   }
 
 .diferenciais{
@@ -614,6 +631,10 @@ header img{
     padding-bottom: 0;
     padding-top: 50px;
     
+}
+
+.carousel-track-gal img {
+    flex: 0 0 100%;
 }
 
 .itens-dif{
