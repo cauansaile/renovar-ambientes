@@ -246,6 +246,49 @@ applySizes(false);
 goToSlide(currentIndex, false);
 
 
+// Seleciona elementos do lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.querySelector('.lightbox-img');
+const lightboxClose = document.querySelector('.lightbox-close');
+
+// Função para abrir lightbox com imagem correta
+function openLightbox(img) {
+  // img.dataset.originalIndex contém o índice do slide original
+  const originalIndex = img.dataset.originalIndex;
+  lightboxImg.src = slides[originalIndex].src;
+  lightbox.style.display = 'flex';
+}
+
+// Fecha lightbox
+function closeLightbox() {
+  lightbox.style.display = 'none';
+}
+
+// Eventos de fechamento
+lightboxClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', e => {
+  if (e.target === lightbox) closeLightbox();
+});
+
+// Adiciona data-original-index aos slides (originais) e clones
+function setOriginalIndexes() {
+  slides.forEach((slide, i) => slide.dataset.originalIndex = i);
+  document.querySelectorAll('.carousel-track-gal img.clone').forEach(clone => {
+    // pega src do clone e acha o índice do original correspondente
+    const index = slides.findIndex(s => s.src === clone.src);
+    clone.dataset.originalIndex = index;
+  });
+}
+
+// Chamamos após clonar slides
+setOriginalIndexes();
+
+// Evento click em todos slides (originais e clones)
+document.querySelectorAll('.carousel-track-gal img').forEach(img => {
+  img.addEventListener('click', () => openLightbox(img));
+});
+
+
 
 
 // ===================== CARROSSEL DIFERENCIAIS =====================
