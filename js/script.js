@@ -303,7 +303,7 @@ document.getElementById("formContato").addEventListener("submit", function(event
 
   const texto = `Olá! Me chamo ${nome}, Gostaria de um orçamento.%0A🏫 Endereço: ${endereco}%0A📝 Serviço: ${servico || "N/A"}`;
 
-  const numero = "5571993201911"; // Altere para o número da escola com DDI + DDD
+  const numero = "5571992655264"; // Altere para o número da escola com DDI + DDD
   const url = `https://wa.me/${numero}?text=${texto}`;
 
   window.open(url, "_blank");
